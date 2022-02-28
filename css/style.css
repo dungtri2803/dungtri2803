@@ -35,7 +35,6 @@
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
-
     overflow-x: hidden;
 }
 html::-webkit-scrollbar{
@@ -51,6 +50,13 @@ html::-webkit-scrollbar-thumb{
 section{
     padding: 3rem 9%;
 }
+.swiper-wrapper{
+    box-sizing: border-box!important;
+}
+.main{
+    max-width: 1440px;
+    margin: 0 auto;
+}
 .btn{
     display: inline-block;
     padding: 2rem 4rem;
@@ -61,6 +67,7 @@ section{
     top: 0;
     right: 0;
     left: 0;
+    width: 100%;
     background-color: var(--white);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     z-index: 1000;
@@ -117,9 +124,10 @@ section{
 }
 /* banner */
 .booking-bar{
-    position: relative;
-    width: 100%;
-    padding: 0;
+    background-image: url(../images/banner1.png);
+    background-position: center;
+    background-size: cover;
+    padding-top: 60rem;
 }
 .booking-bar .banner-image img{
     box-shadow: 0 0 0 1000rem rgba(0, 0, 0, 0.30);
@@ -129,7 +137,7 @@ section{
 }
 .booking-bar .booking-list{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     transform: translateY(-50%);
     margin: 0 auto;
@@ -242,6 +250,7 @@ section{
 .category{
     margin-top: 2rem;
     text-align: center;
+    overflow: hidden;
 }
 .category .category-heading{
     display: flex;
@@ -269,6 +278,7 @@ section{
     margin-top: 2rem;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
 }
 .category .category-list img{
     width: 100%;
@@ -299,6 +309,7 @@ section{
 /* yard-hot */
 .yard-hot{
     text-align: center;
+    overflow: hidden;
 }
 .yard-hot .yard-hot-heading{
     display: flex;
@@ -325,6 +336,7 @@ section{
 .yard-hot .yard-hot-list{
     margin-top: 2rem;
     cursor: pointer;
+    overflow: hidden;
 }
 .yard-hot .yard-hot-list .yard-hot-item .yard-hot-image{
     width: 100%;
@@ -384,6 +396,7 @@ section{
 .testimonial{
     margin-top: 2rem;
     text-align: center;
+    overflow: hidden;
 }
 .testimonial .heading-title{
     font-size: 3rem;
@@ -392,6 +405,7 @@ section{
 }
 .testimonial .testimonial-list{
     margin-top: 2rem;
+    overflow: hidden;
 }
 .testimonial .testimonial-list .testimonial-item{
     background-color: var(--white);
@@ -424,6 +438,7 @@ section{
 /* blog */
 .blog{
     margin-top: 2rem;
+    overflow: hidden;
 }
 .blog .heading-title{
     font-size: 3rem;
@@ -735,6 +750,7 @@ section{
     transform: translateY(-0.5rem);
     box-shadow: 0 0 1rem rgb(0 0 0 / 50%);
     height: 40rem;
+    overflow: hidden;
 }
 .yard .yard-list .yard-item .yard-text .yard-price p{
     font-size: 1.8rem;
@@ -755,6 +771,9 @@ section{
     color: var(--black2);
     margin-top: 0.5rem;
 }
+.yard-detail{
+    overflow: hidden;
+}
 .yard-detail-image{
     width: 100%;
     position: relative;
@@ -769,7 +788,9 @@ section{
 }
 .yard-detail-heading{
     position: absolute;
-    bottom: 50%;
+    bottom: 60%;
+    transform: translateY(-50%);
+    left: 10%;
 }
 .yard-detail .yard-detail-heading h2{
     font-size: 4.5rem;
@@ -983,18 +1004,17 @@ section{
 }
 /* login */
 .yard-login{
-    height: 100%;
-    width: 100%;
     background-image: url(/images/login1.jpg);
     background-position: center;
     background-size: cover;
-
+    padding-top: 20rem;
+    overflow: hidden;   
 }
 .yard-login .form-box{
     width: 40rem;
     height: 48rem;
     position: relative;
-    margin: 6% auto;
+    margin: 0 auto;
     background-color: var(--white);
     padding: 0.5rem;
     border-radius: 2rem;
@@ -1093,7 +1113,9 @@ section{
 
 
 
-
+@media (max-width: 1200px) {
+    
+}
 @media (max-width: 991px) {
     html{
         font-size: 55%;
@@ -1104,12 +1126,12 @@ section{
     .header .navbar{
         padding: 0;
     }
-    .booking-options .booking-list .booking-item .booking-bar-form{
+    .booking-bar .booking-list .booking-item .booking-bar-form{
         background-color: var(--white);
         border-radius: 3rem;
         padding: 2rem;
     }
-    .booking-options .booking-list .booking-item .booking-bar-form .form-group:after{
+    .booking-bar .booking-list .booking-item .booking-bar-form .form-group:after{
         display: block;
         width: calc(100% - 4rem);
         height: 1px;
@@ -1122,13 +1144,13 @@ section{
         left: 50%;
         transform: translateX(-50%);
     }
-    .booking-options .booking-list .booking-item .booking-bar-form .input-name{
+    .booking-bar .booking-list .booking-item .booking-bar-form .input-name{
         flex: 1 1 100%;
     }
-    .booking-options .booking-list .booking-item .booking-bar-form .input-date{
+    .booking-bar .booking-list .booking-item .booking-bar-form .input-date{
         flex: 1 1 100%;
     }
-    .booking-options .booking-list .booking-item .booking-bar-form .input-time{
+    .booking-bar .booking-list .booking-item .booking-bar-form .input-time{
         flex: 1 1 100%;
     }
     .blog .blog-list .blog-item{
@@ -1150,6 +1172,16 @@ section{
 @media (max-width: 768px){
     #menuBar{
         display: block;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        z-index: 1000;
     }
     .header .navbar{
         padding: 0;
@@ -1187,6 +1219,56 @@ section{
 @media (max-width: 456px) {
     html{
         font-size: 50%;
+    }
+    .header .navbar{
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+    .booking-bar .booking-list{
+        top: 34%;
+    }
+    .booking-bar .booking-list .booking-item .booking-content h1{
+        font-size: 2.8rem;
+    }
+    .booking-bar .booking-list .booking-item .booking-content h3{
+        font-size: 2.4rem;
+    }
+    .booking-bar .booking-list .booking-item .booking-content h3 span{
+        font-size: 2.4rem;
+    }
+    .category .heading-title{
+        font-size: 1.6rem;
+    }
+    .yard-hot .heading-title{
+        font-size: 1.6rem;
+    }
+    .category .category-list img{
+        height: 35vh;
+    }
+    .yard .yard-list .yard-item{
+        flex: 1 1 50%;
+    }
+    .yard-detail .yard-detail-heading h2{
+        font-size: 3.5rem;
+    }
+    .yard-detail .yard-detail-heading p{
+        font-size: 2rem;
+    }
+    .yard-detail .yard-detail-content .yard-detail-left{
+        width: 100%;
+    }
+    .yard-detail .yard-detail-content .yard-detail-right .yard-detail-list{
+        display: inline-block;
+    }
+    .yard-detail .yard-detail-item img{
+        width: 40rem;
+        height: 30rem;
+    }
+    .yard-detail .yard-detail-map .map{
+        height: 35rem;
+    }
+    .yard-login .form-box{
+        width: 40rem;
     }
 
 }
